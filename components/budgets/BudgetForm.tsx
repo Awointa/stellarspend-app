@@ -12,7 +12,7 @@ const budgetSchema = z.object({
         .min(0.01, 'Minimum amount is 0.01'),
     category: z.string().min(1, 'Category is required'),
     period: z.enum(['daily', 'monthly', 'quarterly'], {
-        errorMap: () => ({ message: 'Please select a valid period' }),
+        message: 'Please select a valid period',
     }),
 });
 
@@ -23,13 +23,13 @@ export default function BudgetForm() {
         register,
         handleSubmit,
         formState: { errors, isValid, isSubmitting },
-    } = useForm<BudgetFormData>({
+    } = useForm({
         schema: budgetSchema,
         defaultValues: {
             name: '',
             amount: 0,
             category: '',
-            period: 'monthly',
+            period: 'monthly' as const,
         },
         mode: 'onChange',
     });
@@ -45,7 +45,7 @@ export default function BudgetForm() {
         <div className="w-full max-w-md p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
             <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Create Budget</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit as any)} className="space-y-4">
                 <div className="space-y-1">
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                         Budget Name

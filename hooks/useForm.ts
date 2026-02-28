@@ -13,7 +13,7 @@ import { ZodSchema } from 'zod';
  */
 interface UseFormProps<TFieldValues extends FieldValues = FieldValues>
   extends Omit<UseHookFormProps<TFieldValues>, 'resolver'> {
-  schema: ZodSchema<TFieldValues>;
+  schema: ZodSchema<any>;
 }
 
 /**
@@ -31,9 +31,10 @@ interface UseFormProps<TFieldValues extends FieldValues = FieldValues>
 export function useForm<TFieldValues extends FieldValues = FieldValues>({
   schema,
   ...options
-}: UseFormProps<TFieldValues>): UseFormReturn<TFieldValues> {
+}: UseFormProps<TFieldValues>) {
   return useHookForm<TFieldValues>({
     ...options,
+    // @ts-ignore - Zod v4 type compatibility issue with resolver
     resolver: zodResolver(schema),
   });
 }

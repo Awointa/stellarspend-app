@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/hero/Hero';
+import FeaturesSection from '@/components/features/FeaturesSection';
+import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 
 export const metadata: Metadata = {
   title: 'StellarSpend — Track your Stellar transactions',
@@ -16,14 +18,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main id="main-content">
-   
-
       <Hero />
-
-      {/* Placeholder for features / signup sections */}
-      <section id="features" aria-label="Features overview">
-        {/* coming soon */}
-      </section>
+      <FeaturesSection />
+      <TestimonialsSection />
     </main>
   );
 }

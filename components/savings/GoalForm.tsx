@@ -25,7 +25,7 @@ export default function GoalForm() {
         register,
         handleSubmit,
         formState: { errors, isValid, isSubmitting },
-    } = useForm<GoalFormData>({
+    } = useForm({
         schema: goalSchema,
         defaultValues: {
             title: '',
@@ -53,7 +53,7 @@ export default function GoalForm() {
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Savings Goal</h2>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit as any)} className="space-y-4">
                 <div className="space-y-1">
                     <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                         Goal Title
