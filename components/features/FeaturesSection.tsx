@@ -7,19 +7,19 @@ const features = [
   {
     title: 'Real-time Transaction Tracking',
     description: 'Monitor every Stellar transaction instantly with our blockchain-powered tracking system.',
-    imageSrc: '/images/features/tracking.jpg',
+    imageSrc: '/images/features/tracking.svg',
     imageAlt: 'Real-time transaction tracking dashboard',
   },
   {
     title: 'Smart Budget Management',
     description: 'Set intelligent budgets that adapt to your spending patterns and help you save more.',
-    imageSrc: '/images/features/budgets.jpg',
+    imageSrc: '/images/features/budgets.svg',
     imageAlt: 'Budget management interface',
   },
   {
     title: 'Savings Goals',
     description: 'Create and track savings goals with visual progress indicators and milestone celebrations.',
-    imageSrc: '/images/features/savings.jpg',
+    imageSrc: '/images/features/savings.svg',
     imageAlt: 'Savings goals visualization',
   },
 ];

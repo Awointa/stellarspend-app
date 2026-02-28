@@ -8,19 +8,19 @@ const testimonials = [
     quote: 'StellarSpend helped me track my spending for the first time. No bank account needed, just my wallet.',
     author: 'Maria Santos',
     role: 'Small Business Owner',
-    avatarSrc: '/images/avatars/maria.jpg',
+    avatarSrc: '/images/avatars/maria.svg',
   },
   {
     quote: 'The low transaction fees mean I can actually afford to manage my money. This is a game changer.',
     author: 'James Chen',
     role: 'Freelance Developer',
-    avatarSrc: '/images/avatars/james.jpg',
+    avatarSrc: '/images/avatars/james.svg',
   },
   {
     quote: 'Finally, a financial tool that respects my privacy and doesn\'t require endless paperwork.',
     author: 'Aisha Mohammed',
     role: 'Student',
-    avatarSrc: '/images/avatars/aisha.jpg',
+    avatarSrc: '/images/avatars/aisha.svg',
   },
 ];
 

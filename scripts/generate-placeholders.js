@@ -11,12 +11,12 @@ const fs = require('fs');
 const path = require('path');
 
 const placeholders = [
-  { path: 'public/images/features/tracking.jpg', width: 400, height: 300, text: 'Tracking' },
-  { path: 'public/images/features/budgets.jpg', width: 400, height: 300, text: 'Budgets' },
-  { path: 'public/images/features/savings.jpg', width: 400, height: 300, text: 'Savings' },
-  { path: 'public/images/avatars/maria.jpg', width: 200, height: 200, text: 'MS' },
-  { path: 'public/images/avatars/james.jpg', width: 200, height: 200, text: 'JC' },
-  { path: 'public/images/avatars/aisha.jpg', width: 200, height: 200, text: 'AM' },
+  { path: 'public/images/features/tracking.svg', width: 400, height: 300, text: 'Tracking' },
+  { path: 'public/images/features/budgets.svg', width: 400, height: 300, text: 'Budgets' },
+  { path: 'public/images/features/savings.svg', width: 400, height: 300, text: 'Savings' },
+  { path: 'public/images/avatars/maria.svg', width: 200, height: 200, text: 'MS' },
+  { path: 'public/images/avatars/james.svg', width: 200, height: 200, text: 'JC' },
+  { path: 'public/images/avatars/aisha.svg', width: 200, height: 200, text: 'AM' },
 ];
 
 function generateSVG(width, height, text) {
