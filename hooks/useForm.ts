@@ -4,8 +4,9 @@ import {
   UseFormProps as UseHookFormProps,
   UseFormReturn,
   FieldValues,
+  Resolver,
 } from 'react-hook-form';
-import { ZodSchema } from 'zod';
+import { z } from 'zod';
 
 /**
  * Configuration options for the useForm hook.
@@ -13,7 +14,7 @@ import { ZodSchema } from 'zod';
  */
 interface UseFormProps<TFieldValues extends FieldValues = FieldValues>
   extends Omit<UseHookFormProps<TFieldValues>, 'resolver'> {
-  schema: ZodSchema<any>;
+  schema: z.ZodType<TFieldValues>;
 }
 
 /**
@@ -24,9 +25,13 @@ interface UseFormProps<TFieldValues extends FieldValues = FieldValues>
  * 
  * @example
  * ```tsx
- * const schema = zod.object({ name: zod.string().min(1) });
+ * const schema = z.object({ name: z.string().min(1) });
  * const { register, handleSubmit, errors } = useForm({ schema });
  * ```
+ * 
+ * @note Type assertion required due to version mismatch between @hookform/resolvers
+ * and react-hook-form. The resolver works correctly at runtime.
+ * TODO: Update @hookform/resolvers when compatible version is available.
  */
 export function useForm<TFieldValues extends FieldValues = FieldValues>({
   schema,
@@ -34,7 +39,7 @@ export function useForm<TFieldValues extends FieldValues = FieldValues>({
 }: UseFormProps<TFieldValues>) {
   return useHookForm<TFieldValues>({
     ...options,
-    // @ts-ignore - Zod v4 type compatibility issue with resolver
+    // @ts-expect-error - Type mismatch between @hookform/resolvers and react-hook-form versions
     resolver: zodResolver(schema),
   });
 }

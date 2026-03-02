@@ -27,7 +27,6 @@ export default function GoalForm() {
         register,
         handleSubmit,
         formState: { errors, isValid, isSubmitting },
-    } = useForm({
         reset,
     } = useForm<GoalFormData>({
         schema: goalSchema,

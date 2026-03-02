@@ -25,7 +25,6 @@ export default function BudgetForm() {
         register,
         handleSubmit,
         formState: { errors, isValid, isSubmitting },
-    } = useForm({
         reset,
     } = useForm<BudgetFormData>({
         schema: budgetSchema,
